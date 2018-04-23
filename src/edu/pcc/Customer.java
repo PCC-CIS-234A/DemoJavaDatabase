@@ -1,5 +1,7 @@
 package edu.pcc;
 
+import java.util.ArrayList;
+
 /* Example business logic class to hold customer information */
 public class Customer {
     private String mName;
@@ -33,5 +35,12 @@ public class Customer {
     }
     public void setStateProvince(String stateProvince) {
         mStateProvince = stateProvince;
+    }
+
+    /* business logic methods */
+    public static ArrayList<Customer> getCustomersInState(String state) {
+        /* This method is just a pass through so that the presentation layer doesn't have to talk directly to the data layer */
+        Database db = new Database();
+        return db.getCustomersInState(state);
     }
 }
